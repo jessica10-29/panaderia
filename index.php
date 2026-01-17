@@ -16,7 +16,7 @@ if (!isset($_SESSION['admin'])) {
 <body>
     
 <header class="top-bar">
-    <span>👤 Bienvenido, <?php echo $_SESSION['usuario']; ?></span>
+    <span>👤 Bienvenido,hhh <?php echo $_SESSION['usuario']; ?></span>
     <a href="logout.php" class="btn-logout">Cerrar sesión</a>
 </header>
 <div class="container">
