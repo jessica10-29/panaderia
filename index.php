@@ -10,7 +10,7 @@ if (!isset($_SESSION['admin'])) {
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Pedidos Panadería</title>
+<title>Pedidos</title>
 <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
