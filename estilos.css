@@ -174,5 +174,45 @@ body{
   transform: scale(1.1);
   background: linear-gradient(135deg, #ef5350, #c62828);
 }
+/* ===== Productos adicionales ===== */
+.extras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.extra-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform 0.2s ease;
+}
+
+.extra-card:hover {
+    transform: translateY(-3px);
+}
+
+.extra-nombre {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.extra-precio {
+    color: #2e7d32;
+    font-size: 13px;
+}
+
+.extra-input {
+    width: 60px;
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
 
   

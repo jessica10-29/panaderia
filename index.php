@@ -46,6 +46,7 @@ include 'conexion.php';
 <!-- ================= PRODUCTOS ADICIONALES ================= -->
 <h3>🧾 Productos adicionales</h3>
 
+<div class="extras-grid">
 <?php
 $res = $conexion->query("SELECT * FROM productos_extra WHERE activo = 1");
 
@@ -55,11 +56,18 @@ if ($res->num_rows == 0) {
 
 while($p = $res->fetch_assoc()){
 ?>
-    <label class="extra-item">
-        <?= $p['nombre'] ?> ($ <?= number_format($p['precio'],0,',','.') ?>)
-        <input type="number" name="extra[<?= $p['id'] ?>]" min="0">
-    </label>
+    <div class="extra-card">
+        <span class="extra-nombre"><?= $p['nombre'] ?></span>
+        <span class="extra-precio">$ <?= number_format($p['precio'],0,',','.') ?></span>
+        <input type="number"
+               name="extra[<?= $p['id'] ?>]"
+               min="0"
+               value="0"
+               class="extra-input">
+    </div>
 <?php } ?>
+</div>
+
 
 <label>Estado del Pedido</label>
 <select name="estado">
