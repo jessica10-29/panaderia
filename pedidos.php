@@ -61,7 +61,7 @@ $extras = $conexion->query("
 if ($extras->num_rows > 0) {
     echo "<hr><strong> Productos adicionales:</strong><br>";
     while ($e = $extras->fetch_assoc()) {
-        echo "🍕 {$e['nombre']}: {$e['cantidad']}<br>";
+        echo "{$e['nombre']}: {$e['cantidad']}<br>";
     }
 }
 
