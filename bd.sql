@@ -28,3 +28,9 @@ CREATE TABLE pedidos (
     total DECIMAL(10,2) DEFAULT 0,
     estado ENUM('En espera','En proceso','Despachado') NOT NULL
 );
+CREATE TABLE productos_extra (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    precio DECIMAL(10,2),
+    activo TINYINT(1) DEFAULT 1
+);

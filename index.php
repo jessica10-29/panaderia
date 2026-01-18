@@ -5,6 +5,7 @@ if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
     exit;
 }
+include 'conexion.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,7 +17,7 @@ if (!isset($_SESSION['admin'])) {
 <body>
     
 <header class="top-bar">
-    <span>👤 Bienvenido,hhh <?php echo $_SESSION['usuario']; ?></span>
+    <span>👤 Bienvenido <?php echo $_SESSION['usuario']; ?></span>
     <a href="logout.php" class="btn-logout">Cerrar sesión</a>
 </header>
 <div class="container">
@@ -42,6 +43,23 @@ if (!isset($_SESSION['admin'])) {
 <input type="number" name="tortas" placeholder="Tortas">
 </div>
 
+<!-- ================= PRODUCTOS ADICIONALES ================= -->
+<h3>🧾 Productos adicionales</h3>
+
+<?php
+$res = $conexion->query("SELECT * FROM productos_extra WHERE activo = 1");
+
+if ($res->num_rows == 0) {
+    echo "<p>No hay productos adicionales</p>";
+}
+
+while($p = $res->fetch_assoc()){
+?>
+    <label class="extra-item">
+        <?= $p['nombre'] ?> ($ <?= number_format($p['precio'],0,',','.') ?>)
+        <input type="number" name="extra[<?= $p['id'] ?>]" min="0">
+    </label>
+<?php } ?>
 
 <label>Estado del Pedido</label>
 <select name="estado">
