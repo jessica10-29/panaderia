@@ -40,18 +40,36 @@ include 'conexion.php';
 $res = $conexion->query("SELECT * FROM pedidos ORDER BY id DESC");
 
 while($p = $res->fetch_assoc()){
-echo "<tr>
-<td>{$p['id']}</td>
-<td>{$p['cliente']}</td>
-<td>
-🥐 Buñuelos: {$p['bunuelos']}<br>
-🥖 Pan básico: {$p['pan_basico']}<br>
-☕ Café: {$p['cafe']}<br>
-🧀 Pandebono: {$p['pandebono']}<br>
-</td>
-<td>$ {$p['total']}</td>
-<td>{$p['estado']}</td>
-<td>
+
+echo "<tr>";
+echo "<td>{$p['id']}</td>";
+echo "<td>{$p['cliente']}</td>";
+
+echo "<td>";
+echo "🥐 Buñuelos: {$p['bunuelos']}<br>";
+echo "🥖 Pan básico: {$p['pan_basico']}<br>";
+echo "☕ Café: {$p['cafe']}<br>";
+echo "🧀 Pandebono: {$p['pandebono']}<br>";
+
+$extras = $conexion->query("
+    SELECT pe.cantidad, pr.nombre
+    FROM pedido_productos_extra pe
+    JOIN productos_extra pr ON pr.id = pe.producto_id
+    WHERE pe.pedido_id = {$p['id']}
+");
+
+if ($extras->num_rows > 0) {
+    echo "<hr><strong> Productos adicionales:</strong><br>";
+    while ($e = $extras->fetch_assoc()) {
+        echo "🍕 {$e['nombre']}: {$e['cantidad']}<br>";
+    }
+}
+
+echo "</td>";
+echo "<td>$ {$p['total']}</td>";
+echo "<td>{$p['estado']}</td>";
+
+echo "<td>
   <div class='acciones'>
     <a href='editar.php?id={$p['id']}' class='icon-btn edit' title='Editar'>
       <i class='fa-solid fa-pen-to-square'></i>
@@ -64,9 +82,10 @@ echo "<tr>
       <i class='fa-solid fa-trash'></i>
     </a>
   </div>
-</td>
+</td>";
 
-</tr>";
+echo "</tr>";
+
 }
 ?>
 </table>

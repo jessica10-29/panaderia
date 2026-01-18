@@ -89,6 +89,9 @@ if (isset($_POST['extra'])) {
                 "SELECT precio FROM productos_extra WHERE id=$id_producto"
             );
             $p = $res->fetch_assoc();
+            
+
+
 
             $precio = $p['precio'];
 
