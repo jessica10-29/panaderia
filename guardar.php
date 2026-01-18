@@ -74,5 +74,35 @@ if (!$conexion->query($sql)) {
     die("❌ Error al guardar pedido: " . $conexion->error);
 }
 
+// 🔹 ID del pedido recién guardado
+$pedido_id = $conexion->insert_id;
+
+// 🔹 Guardar productos nuevos (productos_extra)
+if (isset($_POST['extra'])) {
+
+    foreach ($_POST['extra'] as $id_producto => $cantidad) {
+
+        if ($cantidad > 0) {
+
+            // Obtener precio del producto
+            $res = $conexion->query(
+                "SELECT precio FROM productos_extra WHERE id=$id_producto"
+            );
+            $p = $res->fetch_assoc();
+
+            $precio = $p['precio'];
+
+            // Insertar detalle
+            $conexion->query("
+                INSERT INTO pedido_productos_extra
+                (pedido_id, producto_id, cantidad, precio)
+                VALUES
+                ($pedido_id, $id_producto, $cantidad, $precio)
+            ");
+        }
+    }
+}
+
+
 header("Location: pedidos.php");
 exit;

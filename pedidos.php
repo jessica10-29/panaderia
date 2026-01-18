@@ -71,7 +71,7 @@ echo "<tr>
 ?>
 </table>
 
-<a href="index.php" class="btn">➕ Nuevo Pedido</a>
+<a href="index.php" class="btn"> Nuevo Pedido</a>
 </div>
 
 </body>
