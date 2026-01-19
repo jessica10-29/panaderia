@@ -50,12 +50,23 @@ while($p = $res->fetch_assoc()){
 <td>$ <?= number_format($p['precio'],0,',','.') ?></td>
 <td><?= $p['activo'] ? 'Activo' : 'Inactivo' ?></td>
 <td>
-<a class="btn-toggle <?= $p['activo'] ? 'off' : 'on' ?>"
-   href="producto_estado.php?id=<?= $p['id'] ?>">
+<td>
+<div class="acciones">
 
-   <i class="fa-solid <?= $p['activo'] ? 'fa-toggle-off' : 'fa-toggle-on' ?>"></i>
-   <?= $p['activo'] ? 'Desactivar' : 'Activar' ?>
-</a>
+    <!-- Editar -->
+    <a href="producto_editar.php?id=<?= $p['id'] ?>"
+       class="icon-btn edit"
+       title="Editar producto">
+        <i class="fa-solid fa-pen-to-square"></i>
+    </a>
+
+    <!-- Activar / Desactivar -->
+    <a href="producto_estado.php?id=<?= $p['id'] ?>"
+       class="icon-btn toggle <?= $p['activo'] ? 'off' : 'on' ?>"
+       title="<?= $p['activo'] ? 'Desactivar' : 'Activar' ?>">
+        <i class="fa-solid <?= $p['activo'] ? 'fa-eye-slash' : 'fa-eye' ?>"></i>
+    </a>
+
 
 <a class="btn-del" href="producto_eliminar.php?id=<?= $p['id'] ?>"
 onclick="return confirm('¿Eliminar producto?')">
