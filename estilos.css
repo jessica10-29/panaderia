@@ -1,11 +1,11 @@
 body{
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(120deg,#f6d365,#fda085);
+    background: linear-gradient(120deg,#f6d365,#ff9b80);
     }
     .container{
     width: 90%;
     max-width: 900px;
-    background: rgb(187, 145, 145);
+    background: rgb(224, 153, 153);
     margin: 40px auto;
     padding: 30px;
     border-radius: 15px;
@@ -25,8 +25,8 @@ body{
     gap:10px;
     }
     button,.btn{
-    background:#fda085;
-    color:white;
+    background:#fd8868;
+    color:rgb(253, 192, 223);
     padding:12px;
     border:none;
     border-radius:10px;
