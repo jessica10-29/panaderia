@@ -20,7 +20,7 @@ include 'conexion.php';
 
 <header class="top-bar">
     <span>📦 Lista de Pedidos</span>
-    <a href="logout.php" class="btn-logout">Cerrar sesión</a>
+    <a href="index.php" class="btn-logout">Volver</a>
 </header>
 
 <div class="container">
