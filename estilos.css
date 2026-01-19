@@ -1,6 +1,6 @@
 body{
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(120deg,#f6d365,#ff9b80);
+    background: linear-gradient(120deg,#f0c32f,#fa744f);
     }
     .container{
     width: 90%;
@@ -26,7 +26,7 @@ body{
     }
     button,.btn{
     background:#010c4e;
-    color:rgb(1, 33, 75);
+    color:#ffffff;
     padding:12px;
     border:none;
     border-radius:10px;
