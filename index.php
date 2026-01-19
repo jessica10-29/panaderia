@@ -21,7 +21,7 @@ include 'conexion.php';
     <a href="logout.php" class="btn-logout">Cerrar sesión</a>
 </header>
 <div class="container">
-<h1>🥐 Pedido Panadería</h1>
+<h1>  Panadería</h1>
 <form action="guardar.php" method="POST">
 <label>Nombre del Cliente</label>
 <input type="text" name="cliente" required>
@@ -57,13 +57,36 @@ if ($res->num_rows == 0) {
 while($p = $res->fetch_assoc()){
 ?>
     <div class="extra-card">
-        <span class="extra-nombre"><?= $p['nombre'] ?></span>
-        <span class="extra-precio">$ <?= number_format($p['precio'],0,',','.') ?></span>
+
+        <!-- Información -->
+        <div class="extra-info">
+            <span class="extra-nombre"><?= $p['nombre'] ?></span>
+            <span class="extra-precio">$ <?= number_format($p['precio'],0,',','.') ?></span>
+        </div>
+
+        <!-- Cantidad -->
         <input type="number"
                name="extra[<?= $p['id'] ?>]"
                min="0"
                value="0"
                class="extra-input">
+
+        <!-- Acciones ADMIN -->
+        <div class="extra-actions">
+            <a href="producto_editar.php?id=<?= $p['id'] ?>"
+               class="icon-btn edit"
+               title="Editar producto">
+               <i class="fa-solid fa-pen"></i>
+            </a>
+
+            <a href="producto_eliminar.php?id=<?= $p['id'] ?>"
+               class="icon-btn delete"
+               title="Eliminar producto"
+               onclick="return confirm('¿Eliminar producto?')">
+               <i class="fa-solid fa-trash"></i>
+            </a>
+        </div>
+
     </div>
 <?php } ?>
 </div>

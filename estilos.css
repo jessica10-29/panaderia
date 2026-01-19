@@ -177,24 +177,26 @@ body{
 /* ===== Productos adicionales ===== */
 .extras-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     gap: 15px;
-    margin: 15px 0;
+    margin-bottom: 25px;
 }
 
 .extra-card {
     background: #fff;
     border-radius: 12px;
     padding: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    transition: transform 0.2s ease;
+    gap: 8px;
+    position: relative;
 }
 
-.extra-card:hover {
-    transform: translateY(-3px);
+.extra-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .extra-nombre {
@@ -203,16 +205,46 @@ body{
 }
 
 .extra-precio {
-    color: #2e7d32;
     font-size: 13px;
+    color: #2e7d32;
+    font-weight: bold;
 }
 
 .extra-input {
-    width: 60px;
+    width: 100%;
     padding: 6px;
-    border-radius: 8px;
+    text-align: center;
+    border-radius: 6px;
     border: 1px solid #ccc;
+}
+
+/* ===== Acciones ===== */
+.extra-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+}
+
+.icon-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
     font-size: 14px;
 }
 
-  
+.icon-btn.edit {
+    background: #1976d2;
+}
+
+.icon-btn.delete {
+    background: #d32f2f;
+}
+
+.icon-btn:hover {
+    opacity: 0.85;
+}
