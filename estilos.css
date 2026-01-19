@@ -5,7 +5,7 @@ body{
     .container{
     width: 90%;
     max-width: 900px;
-    background: white;
+    background: rgb(187, 145, 145);
     margin: 40px auto;
     padding: 30px;
     border-radius: 15px;
@@ -157,23 +157,6 @@ body{
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-/* EDITAR */
-.icon-btn.edit{
-  background: linear-gradient(135deg, #4caf50, #2e7d32);
-}
-.icon-btn.edit:hover{
-  transform: scale(1.1);
-  background: linear-gradient(135deg, #66bb6a, #388e3c);
-}
-
-/* ELIMINAR */
-.icon-btn.delete{
-  background: linear-gradient(135deg, #e53935, #b71c1c);
-}
-.icon-btn.delete:hover{
-  transform: scale(1.1);
-  background: linear-gradient(135deg, #ef5350, #c62828);
-}
 
 /* ===== Acciones iconos ===== */
 .acciones {
