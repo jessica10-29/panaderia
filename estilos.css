@@ -5,7 +5,8 @@ body{
     .container{
     width: 90%;
     max-width: 900px;
-    background: #6F4E37;
+    background: #c48603;
+    color: #fff;
     margin: 40px auto;
     padding: 30px;
     border-radius: 15px;
