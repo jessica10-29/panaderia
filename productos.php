@@ -18,13 +18,13 @@ include 'conexion.php';
 <header class="top-bar">
     <span>📦 Inventario de Productos</span>
     <a href="index.php" class="btn">Pedidos</a>
-    <a href="index.php" class="btn">⬅ Volver a pedidos</a>
+    
 
 </header>
 
 <div class="container">
 
-<h2>➕ Agregar producto</h2>
+<h2>Agregar producto</h2>
 
 <form action="producto_guardar.php" method="POST" class="form-mini">
     <input type="text" name="nombre" placeholder="Nombre del producto" required>

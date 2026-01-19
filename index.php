@@ -21,11 +21,11 @@ include 'conexion.php';
     <a href="logout.php" class="btn-logout">Cerrar sesión</a>
 </header>
 <header class="top-bar">
-    <span>📦 Lista de Pedidos</span>
+    <span>📦 Agregar Nuevo Productos</span>
 
     <nav class="menu">
         <a href="productos.php" class="btn">📦 Productos</a>
-        <a href="logout.php" class="btn-logout">Cerrar sesión</a>
+        
     </nav>
 </header>
 
