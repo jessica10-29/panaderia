@@ -174,77 +174,47 @@ body{
   transform: scale(1.1);
   background: linear-gradient(135deg, #ef5350, #c62828);
 }
-/* ===== Productos adicionales ===== */
-.extras-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-    gap: 15px;
-    margin-bottom: 25px;
-}
 
-.extra-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 12px;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+/* ===== Acciones iconos ===== */
+.acciones {
     display: flex;
-    flex-direction: column;
     gap: 8px;
-    position: relative;
-}
-
-.extra-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.extra-nombre {
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.extra-precio {
-    font-size: 13px;
-    color: #2e7d32;
-    font-weight: bold;
-}
-
-.extra-input {
-    width: 100%;
-    padding: 6px;
-    text-align: center;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-/* ===== Acciones ===== */
-.extra-actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 6px;
+    justify-content: center;
 }
 
 .icon-btn {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
     color: #fff;
-    font-size: 14px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.2s;
 }
 
+/* Editar */
 .icon-btn.edit {
-    background: #1976d2;
+    background: #3b82f6;
+}
+.icon-btn.edit:hover {
+    background: #2563eb;
 }
 
+/* Eliminar */
 .icon-btn.delete {
-    background: #d32f2f;
+    background: #ef4444;
+}
+.icon-btn.delete:hover {
+    background: #dc2626;
 }
 
-.icon-btn:hover {
-    opacity: 0.85;
+/* Activar / Desactivar */
+.icon-btn.toggle {
+    background: #f59e0b;
+}
+.icon-btn.toggle:hover {
+    background: #d97706;
 }
