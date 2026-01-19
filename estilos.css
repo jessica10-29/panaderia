@@ -5,7 +5,7 @@ body{
     .container{
     width: 90%;
     max-width: 900px;
-    background: rgb(124, 62, 33);
+    background: rgb(179, 90, 48);
     margin: 40px auto;
     padding: 30px;
     border-radius: 15px;
@@ -17,7 +17,7 @@ body{
     padding:10px;
     margin:8px 0;
     border-radius:8px;
-    border:1px solid #ccc;
+    border:1px solid #fffdfd;
     }
     .grid{
     display:grid;
@@ -220,4 +220,57 @@ body{
 }
 .icon-btn.delete:hover {
     background: #dc2626;
+}
+/* GRID de productos adicionales */
+.extras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Tarjeta del producto */
+.extra-card {
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 8px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Nombre del producto */
+.extra-nombre {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: #333;
+}
+
+/* Precio */
+.extra-precio {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+/* Input cantidad PEQUEÑO */
+.extra-input {
+    width: 45px;
+    height: 28px;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+/* Quitar flechas grandes del input (opcional) */
+.extra-input::-webkit-inner-spin-button,
+.extra-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
