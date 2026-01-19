@@ -68,10 +68,13 @@ while($p = $res->fetch_assoc()){
     </a>
 
 
-<a class="btn-del" href="producto_eliminar.php?id=<?= $p['id'] ?>"
-onclick="return confirm('¿Eliminar producto?')">
-🗑 Eliminar
+<a href="producto_eliminar.php?id=<?= $p['id'] ?>"
+   class="icon-btn delete"
+   title="Eliminar"
+   onclick="return confirm('¿Eliminar producto?')">
+🗑
 </a>
+
 </td>
 </tr>
 <?php } ?>
