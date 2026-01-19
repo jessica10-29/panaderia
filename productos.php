@@ -18,7 +18,8 @@ include 'conexion.php';
 <header class="top-bar">
     <span>📦 Inventario de Productos</span>
     <a href="index.php" class="btn">Pedidos</a>
-    <a href="logout.php" class="btn-logout">Salir</a>
+    <a href="index.php" class="btn">⬅ Volver a pedidos</a>
+
 </header>
 
 <div class="container">
