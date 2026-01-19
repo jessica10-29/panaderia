@@ -218,3 +218,23 @@ body{
 .icon-btn.toggle:hover {
     background: #d97706;
 }
+.icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+/* ELIMINAR */
+.icon-btn.delete {
+    background: #ef4444;
+}
+.icon-btn.delete:hover {
+    background: #dc2626;
+}
