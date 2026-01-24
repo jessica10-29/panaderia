@@ -7,11 +7,11 @@
   /* Wheat/Crust */
   --accent-color: #E76F51;
   /* Burnt Sienna */
-  --bg-color: #FDFBF7;
-  /* Cream/Flour */
-  --text-color: #2D2D2D;
-  --white: #FFFFFF;
-  --light-gray: #f3f4f6;
+  --bg-color: #E8DCC6;
+  /* Pastel Coffee/Beige */
+  --text-color: #3E2723;
+  --white: #FAF3E0;
+  --light-gray: #EFEBE9;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   --radius: 12px;
 }
