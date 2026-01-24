@@ -38,18 +38,54 @@ include 'conexion.php';
 
 <h3>Productos</h3>
 <div class="grid">
-<input type="number" name="bunuelos" placeholder="Buñuelos">
-<input type="number" name="pan_basico" placeholder="Pan básico">
-<input type="number" name="croissant" placeholder="Croissant">
-<input type="number" name="pandebono" placeholder="Pandebono">
-<input type="number" name="pasteles" placeholder="Pasteles">
-<input type="number" name="palitos_queso" placeholder="Palitos de queso">
-<input type="number" name="jugos" placeholder="Jugos">
-<input type="number" name="cafe" placeholder="Café">
-<input type="number" name="galletas" placeholder="Galletas">
-<input type="number" name="pan_queso" placeholder="Pan de queso">
-<input type="number" name="empanadas" placeholder="Empanadas">
-<input type="number" name="tortas" placeholder="Tortas">
+    <div class="input-group">
+        <label>🥐 Buñuelos <span>$1.500</span></label>
+        <input type="number" name="bunuelos" placeholder="0" min="0">
+    </div>
+    <div class="input-group">
+        <label>🥖 Pan básico <span>$1.000</span></label>
+        <input type="number" name="pan_basico" placeholder="0" min="0">
+    </div>
+    <div class="input-group">
+        <label>🥐 Croissant <span>$2.500</span></label>
+        <input type="number" name="croissant" placeholder="0" min="0">
+    </div>
+    <div class="input-group">
+        <label>🧀 Pandebono <span>$2.000</span></label>
+        <input type="number" name="pandebono" placeholder="0" min="0">
+    </div>
+    <div class="input-group">
+        <label>🍰 Pasteles <span>$3.000</span></label>
+        <input type="number" name="pasteles" placeholder="0" min="0">
+    </div>
+    <div class="input-group">
+        <label>🧀 Palitos queso <span>$1.800</span></label>
+        <input type="number" name="palitos_queso" placeholder="0" min="0">
+    </div>
+    <div class="input-group">
+        <label>🥤 Jugos <span>$2.500</span></label>
+        <input type="number" name="jugos" placeholder="0" min="0">
+    </div>
+    <div class="input-group">
+        <label>☕ Café <span>$1.500</span></label>
+        <input type="number" name="cafe" placeholder="0" min="0">
+    </div>
+    <div class="input-group">
+        <label>🍪 Galletas <span>$1.200</span></label>
+        <input type="number" name="galletas" placeholder="0" min="0">
+    </div>
+    <div class="input-group">
+        <label>🧀 Pan de queso <span>$2.000</span></label>
+        <input type="number" name="pan_queso" placeholder="0" min="0">
+    </div>
+    <div class="input-group">
+        <label>🥟 Empanadas <span>$2.200</span></label>
+        <input type="number" name="empanadas" placeholder="0" min="0">
+    </div>
+    <div class="input-group">
+        <label>🎂 Tortas <span>$3.500</span></label>
+        <input type="number" name="tortas" placeholder="0" min="0">
+    </div>
 </div>
 
 <!-- ================= PRODUCTOS ADICIONALES ================= -->
