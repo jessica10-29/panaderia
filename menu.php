@@ -16,7 +16,7 @@ $productos = [
     'pasteles' => ['nombre' => 'Pasteles', 'precio' => 3000, 'img' => 'https://loremflickr.com/300/200/pastry'],
     'palitos_queso' => ['nombre' => 'Palitos Queso', 'precio' => 1800, 'img' => 'https://loremflickr.com/300/200/cheese,stick'],
     'jugos' => ['nombre' => 'Jugos', 'precio' => 2500, 'img' => 'https://loremflickr.com/300/200/juice'],
-    'cafe' => ['nombre' => 'Café', 'precio' => 1500, 'img' => 'https://loremflickr.com/300/200/coffee'],
+    'cafe' => ['nombre' => 'Café', 'precio' => 1500, 'cafe.png' => 'https://loremflickr.com/300/200/coffee'],
     'galletas' => ['nombre' => 'Galletas', 'precio' => 1200, 'img' => 'https://loremflickr.com/300/200/cookie'],
     'pan_queso' => ['nombre' => 'Pan de Queso', 'precio' => 2000, 'img' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Pandequeso-antioquia.jpg/640px-Pandequeso-antioquia.jpg'],
     'empanadas' => ['nombre' => 'Empanadas', 'precio' => 2200, 'img' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Empanada_colombiana.jpg/640px-Empanada_colombiana.jpg'],
