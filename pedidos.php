@@ -1,86 +1,106 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin'])) {
-    header("Location: login.php");
-    exit;
+  header("Location: login.php");
+  exit;
 }
 include 'conexion.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>Pedidos</title>
-<link rel="stylesheet" href="estilos.css">
-<link rel="stylesheet"
- href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Pedidos</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
+
 <body>
 
-<header class="top-bar">
+  <header class="top-bar">
     <span>📦 Lista de Pedidos</span>
     <a href="index.php" class="btn-logout">Volver</a>
-</header>
+  </header>
 
-<div class="container">
-<h1>📦 Pedidos Registrados</h1>
+  <div class="container">
+    <h1>📦 Pedidos Registrados</h1>
 
-<table>
-<tr>
-<th>ID</th>
-<th>Cliente</th>
-<th>Productos</th>
-<th>Total</th>
-<th>Estado</th>
-<th>Acciones</th>
-</tr>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>Productos</th>
+        <th>Total</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
 
-<form method="GET" action="pedidos.php" style="margin-bottom: 20px;">
-    <input type="text" name="q" placeholder="Buscar por cliente o ID..." value="<?php echo isset($_GET['q']) ? htmlspecialchars($_GET['q']) : ''; ?>" style="padding: 5px; width: 250px;">
-    <button type="submit" class="btn">Buscar</button>
-</form>
+      <form method="GET" action="pedidos.php" style="margin-bottom: 20px;">
+        <input type="text" name="q" placeholder="Buscar por cliente o ID..."
+          value="<?php echo isset($_GET['q']) ? htmlspecialchars($_GET['q']) : ''; ?>"
+          style="padding: 5px; width: 250px;">
+        <button type="submit" class="btn">Buscar</button>
+      </form>
 
-<?php
-$where = "";
-if (isset($_GET['q']) && !empty($_GET['q'])) {
-    $busqueda = $conexion->real_escape_string($_GET['q']);
-    $where = "WHERE cliente LIKE '%$busqueda%' OR id = '$busqueda'";
-}
+      <?php
+      $where = "";
+      if (isset($_GET['q']) && !empty($_GET['q'])) {
+        $busqueda = $conexion->real_escape_string($_GET['q']);
+        $where = "WHERE cliente LIKE '%$busqueda%' OR id = '$busqueda'";
+      }
 
-$res = $conexion->query("SELECT * FROM pedidos $where ORDER BY id DESC");
+      $res = $conexion->query("SELECT * FROM pedidos $where ORDER BY id DESC");
 
-while($p = $res->fetch_assoc()){
+      while ($p = $res->fetch_assoc()) {
 
-echo "<tr>";
-echo "<td>{$p['id']}</td>";
-echo "<td>{$p['cliente']}</td>";
+        echo "<tr>";
+        echo "<td>{$p['id']}</td>";
+        echo "<td>{$p['cliente']}</td>";
 
-echo "<td>";
-echo "🥐 Buñuelos: {$p['bunuelos']}<br>";
-echo "🥖 Pan básico: {$p['pan_basico']}<br>";
-echo "☕ Café: {$p['cafe']}<br>";
-echo "🧀 Pandebono: {$p['pandebono']}<br>";
+        echo "<td>";
+        // Lista de columnas de productos en la BD
+        $productos_bd = [
+          'bunuelos' => '🥐 Buñuelos',
+          'pan_basico' => '🥖 Pan básico',
+          'croissant' => '🥐 Croissant',
+          'pandebono' => '🧀 Pandebono',
+          'pasteles' => '🍰 Pasteles',
+          'palitos_queso' => '🧀 Palitos Queso',
+          'jugos' => '🥤 Jugos',
+          'cafe' => '☕ Café',
+          'galletas' => '🍪 Galletas',
+          'pan_queso' => '🧀 Pan de Queso',
+          'empanadas' => '🥟 Empanadas',
+          'tortas' => '🎂 Tortas'
+        ];
 
-$extras = $conexion->query("
+        foreach ($productos_bd as $col => $nombre) {
+          if (!empty($p[$col]) && $p[$col] > 0) {
+            echo "<strong>$nombre:</strong> {$p[$col]}<br>";
+          }
+        }
+
+        $extras = $conexion->query("
     SELECT pe.cantidad, pr.nombre
     FROM pedido_productos_extra pe
     JOIN productos_extra pr ON pr.id = pe.producto_id
     WHERE pe.pedido_id = {$p['id']}
 ");
 
-if ($extras->num_rows > 0) {
-    echo "<hr><strong> Productos adicionales:</strong><br>";
-    while ($e = $extras->fetch_assoc()) {
-        echo "{$e['nombre']}: {$e['cantidad']}<br>";
-    }
-}
+        if ($extras->num_rows > 0) {
+          echo "<hr><strong> Productos adicionales:</strong><br>";
+          while ($e = $extras->fetch_assoc()) {
+            echo "{$e['nombre']}: {$e['cantidad']}<br>";
+          }
+        }
 
-echo "</td>";
-echo "<td>$ {$p['total']}</td>";
-echo "<td>{$p['estado']}</td>";
+        echo "</td>";
+        echo "<td>$ {$p['total']}</td>";
+        echo "<td>{$p['estado']}</td>";
 
-echo "<td>
+        echo "<td>
   <div class='acciones'>
     <a href='editar.php?id={$p['id']}' class='icon-btn edit' title='Editar'>
       <i class='fa-solid fa-pen-to-square'></i>
@@ -95,14 +115,15 @@ echo "<td>
   </div>
 </td>";
 
-echo "</tr>";
+        echo "</tr>";
 
-}
-?>
-</table>
+      }
+      ?>
+    </table>
 
-<a href="index.php" class="btn"> Nuevo Pedido</a>
-</div>
+    <a href="index.php" class="btn"> Nuevo Pedido</a>
+  </div>
 
 </body>
+
 </html>
