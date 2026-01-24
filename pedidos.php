@@ -36,8 +36,19 @@ include 'conexion.php';
 <th>Acciones</th>
 </tr>
 
+<form method="GET" action="pedidos.php" style="margin-bottom: 20px;">
+    <input type="text" name="q" placeholder="Buscar por cliente o ID..." value="<?php echo isset($_GET['q']) ? htmlspecialchars($_GET['q']) : ''; ?>" style="padding: 5px; width: 250px;">
+    <button type="submit" class="btn">Buscar</button>
+</form>
+
 <?php
-$res = $conexion->query("SELECT * FROM pedidos ORDER BY id DESC");
+$where = "";
+if (isset($_GET['q']) && !empty($_GET['q'])) {
+    $busqueda = $conexion->real_escape_string($_GET['q']);
+    $where = "WHERE cliente LIKE '%$busqueda%' OR id = '$busqueda'";
+}
+
+$res = $conexion->query("SELECT * FROM pedidos $where ORDER BY id DESC");
 
 while($p = $res->fetch_assoc()){
 
