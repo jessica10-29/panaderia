@@ -67,9 +67,7 @@ $productos = [
                                 <div class="product-title">
                                     <?= $prod['nombre'] ?>
                                 </div>
-                                <div class="product-price">$
-                                    <?= number_format($prod['precio'], 0, ',', '.') ?>
-                                </div>
+                                <!-- Precio eliminado -->
                             </div>
 
                             <div class="stepper">
@@ -94,9 +92,7 @@ $productos = [
                         <span class="extra-nombre" style="font-size:1rem;">
                             <?= $p['nombre'] ?>
                         </span>
-                        <span class="extra-precio" style="font-size:0.9rem;">$
-                            <?= number_format($p['precio'], 0, ',', '.') ?>
-                        </span>
+                        <!-- Precio eliminado -->
                         <input type="number" name="extra[<?= $p['id'] ?>]" min="0" value="0" class="extra-input"
                             style="width: 60px; padding: 5px;">
                     </div>
