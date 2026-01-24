@@ -8,18 +8,18 @@ include 'conexion.php';
 
 // Array de productos con imágenes y precios
 $productos = [
-    'bunuelos' => ['nombre' => 'Buñuelos', 'precio' => 1500, 'img' => 'https://via.placeholder.com/300x200?text=Bunuelos'],
-    'pan_basico' => ['nombre' => 'Pan Básico', 'precio' => 1000, 'img' => 'https://via.placeholder.com/300x200?text=Pan+Basico'],
-    'croissant' => ['nombre' => 'Croissant', 'precio' => 2500, 'img' => 'https://via.placeholder.com/300x200?text=Croissant'],
-    'pandebono' => ['nombre' => 'Pandebono', 'precio' => 2000, 'img' => 'https://via.placeholder.com/300x200?text=Pandebono'],
-    'pasteles' => ['nombre' => 'Pasteles', 'precio' => 3000, 'img' => 'https://via.placeholder.com/300x200?text=Pasteles'],
-    'palitos_queso' => ['nombre' => 'Palitos Queso', 'precio' => 1800, 'img' => 'https://via.placeholder.com/300x200?text=Palitos+Queso'],
-    'jugos' => ['nombre' => 'Jugos', 'precio' => 2500, 'img' => 'https://via.placeholder.com/300x200?text=Jugos'],
-    'cafe' => ['nombre' => 'Café', 'precio' => 1500, 'img' => 'https://via.placeholder.com/300x200?text=Cafe'],
-    'galletas' => ['nombre' => 'Galletas', 'precio' => 1200, 'img' => 'https://via.placeholder.com/300x200?text=Galletas'],
-    'pan_queso' => ['nombre' => 'Pan de Queso', 'precio' => 2000, 'img' => 'https://via.placeholder.com/300x200?text=Pan+Queso'],
-    'empanadas' => ['nombre' => 'Empanadas', 'precio' => 2200, 'img' => 'https://via.placeholder.com/300x200?text=Empanadas'],
-    'tortas' => ['nombre' => 'Tortas', 'precio' => 3500, 'img' => 'https://via.placeholder.com/300x200?text=Tortas']
+    'bunuelos' => ['nombre' => 'Buñuelos', 'precio' => 1500, 'img' => 'https://loremflickr.com/300/200/fritter,food'],
+    'pan_basico' => ['nombre' => 'Pan Básico', 'precio' => 1000, 'img' => 'https://loremflickr.com/300/200/bread'],
+    'croissant' => ['nombre' => 'Croissant', 'precio' => 2500, 'img' => 'https://loremflickr.com/300/200/croissant'],
+    'pandebono' => ['nombre' => 'Pandebono', 'precio' => 2000, 'img' => 'https://loremflickr.com/300/200/cheese,bread'],
+    'pasteles' => ['nombre' => 'Pasteles', 'precio' => 3000, 'img' => 'https://loremflickr.com/300/200/pastry'],
+    'palitos_queso' => ['nombre' => 'Palitos Queso', 'precio' => 1800, 'img' => 'https://loremflickr.com/300/200/cheese,stick'],
+    'jugos' => ['nombre' => 'Jugos', 'precio' => 2500, 'img' => 'https://loremflickr.com/300/200/juice'],
+    'cafe' => ['nombre' => 'Café', 'precio' => 1500, 'img' => 'https://loremflickr.com/300/200/coffee'],
+    'galletas' => ['nombre' => 'Galletas', 'precio' => 1200, 'img' => 'https://loremflickr.com/300/200/cookie'],
+    'pan_queso' => ['nombre' => 'Pan de Queso', 'precio' => 2000, 'img' => 'https://loremflickr.com/300/200/bread,cheese'],
+    'empanadas' => ['nombre' => 'Empanadas', 'precio' => 2200, 'img' => 'https://loremflickr.com/300/200/empanada'],
+    'tortas' => ['nombre' => 'Tortas', 'precio' => 3500, 'img' => 'https://loremflickr.com/300/200/cake']
 ];
 ?>
 <!DOCTYPE html>
